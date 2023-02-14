@@ -8,6 +8,8 @@ let package = Package(
     products: [
         .library(name: "Keychain",
                  targets: ["Keychain"]),
+        .library(name: "AuthAPI",
+                 targets: ["AuthAPI"]),
     ],
     dependencies: [
     ],
@@ -16,5 +18,9 @@ let package = Package(
                 dependencies: []),
         .testTarget(name: "KeychainTests",
                     dependencies: ["Keychain"]),
+        .target(name: "Network",
+                dependencies: []),
+        .target(name: "AuthAPI",
+                dependencies: ["Network"]),
     ]
 )
